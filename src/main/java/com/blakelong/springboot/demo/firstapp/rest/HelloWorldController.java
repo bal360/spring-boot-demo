@@ -2,11 +2,18 @@ package com.blakelong.springboot.demo.firstapp.rest;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloWorldController {
+	
+	@Value("${movie.title}")
+	private String title;
+	
+	@Value("${movie.release_date}")
+	private String release_date;
 	
 	// add mapping for root "/"
 	@RequestMapping("/") 
@@ -23,5 +30,10 @@ public class HelloWorldController {
 	@RequestMapping("/secondCheck")
 	public String checkAgain() {
 		return "Successful check, my good sir";
+	}
+	
+	@RequestMapping("/propertiesDemo")
+	public String customProperties() {
+		return "Movie title: " + title + " -- Release Date: " + release_date;
 	}
 }
