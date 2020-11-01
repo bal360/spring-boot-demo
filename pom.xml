@@ -42,8 +42,8 @@
 		</dependency>
 		
 		<dependency>
-			<groupdId>org.springframework.boot</groupdId>
-			<artifactId>spring-boot-starter-acuator</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 	</dependencies>
 
